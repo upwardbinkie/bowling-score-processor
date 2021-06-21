@@ -18,14 +18,15 @@ class Game
         
         file.each do |line|
             line = line.strip.split("\t")
+            player_name = line[0]
         
-            if !players.include?(line[0])
+            if !players.include?(player_name)
                 player = Player.new
-                player.name = line[0]
+                player.name = player_name
                 players[player.name] = player
             end
             
-            players[line[0]].add_pinfalls(line[1])
+            players[player_name].add_pinfalls(line[1])
         end
 
         return players.values
