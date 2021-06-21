@@ -1,4 +1,6 @@
 require_relative 'player'
+require_relative 'pinfall'
+require_relative 'score'
 
 class Game
 
@@ -30,6 +32,36 @@ class Game
         end
 
         return players.values
+    end
+
+    def print_game()
+
+        game_data = load_game()
+
+        pinfall = Pinfall.new
+        score = Score.new
+
+        print "Frame\t\t"
+
+        (1..10).each do |i|
+            print "#{i}\t\t"
+        end
+
+        print "\n"
+
+        game_data.each do |player|
+            puts player.name
+            
+            pinfalls = player.pinfalls
+            
+            frames = player.set_frames(pinfalls)
+        
+            pinfall.print_pinfalls(frames)
+        
+            player_score = score.process_score(frames)
+        
+            score.print_score(player_score)
+        end
     end
 
 end
