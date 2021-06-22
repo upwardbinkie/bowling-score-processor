@@ -1,8 +1,19 @@
-class Pinfall
+class Pinfall    
+
+    def validate_pinfall(pins)
+        if pins =~ /[0-9F]/
+            return
+        end
+        
+        puts "ERROR: #{pins} is not a valid value"
+        exit(false)
+    end
+
     def print_pinfalls(frames)
         print "Pinfalls"
-        
+
         frames.each do |frame|
+            
             if frame == "10"
                 print "\t\tX"
                 next
