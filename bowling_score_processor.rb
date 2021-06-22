@@ -13,6 +13,7 @@ puts "5. Game with too few moves \t\t example_5.txt"
 puts "6. Game with invalid amount of moves \t example_6.txt"
 puts "7. Game with invalid frame value \t example_7.txt"
 puts "8. File with invalid characters \t example_8.txt"
+puts "9. Only Fouls game \t\t\t example_9.txt"
 
 game = Game.new
 
