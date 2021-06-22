@@ -2,11 +2,10 @@ class Pinfall
 
     def validate_pinfall(pins)
         if pins =~ /[0-9F]/
-            return
+            return true
         end
         
-        puts "ERROR: #{pins} is not a valid value"
-        exit(false)
+        print_invalid_pinfall_value_error(pins)
     end
 
     def print_pinfalls(frames)
@@ -41,4 +40,9 @@ class Pinfall
     
         print "\n"
     end
+
+    def print_invalid_pinfall_value_error(pins)
+        puts "ERROR: #{pins} is not a valid value"
+        exit(false)
+    end    
 end

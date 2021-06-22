@@ -73,6 +73,8 @@ class Score
                 print_invalid_frame_value_error(frame_number)
             end
         end
+
+        return true
     end
 
     def print_invalid_frame_value_error(frame_number)
